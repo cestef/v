@@ -109,7 +109,8 @@ fn ring_decode_and_decompress_10(bb [encoding_size_10]u8) RingElement {
 	mut f := RingElement{}
 	mut j := 0
 	for i := 0; i < n; i += 4 {
-		x := u64(bb[j]) | u64(bb[j + 1]) << 8 | u64(bb[j + 2]) << 16 | u64(bb[j + 3]) << 24 | u64(bb[j + 4]) << 32
+		x := u64(bb[j]) | u64(bb[j + 1]) << 8 | u64(bb[j + 2]) << 16 | u64(bb[j + 3]) << 24 | u64(bb[
+			j + 4]) << 32
 		j += 5
 		f[i] = decompress(u16((x >> 0) & 0x3ff), 10)
 		f[i + 1] = decompress(u16((x >> 10) & 0x3ff), 10)

@@ -22,9 +22,9 @@ fn slice_to_32(s []u8) [32]u8 {
 }
 
 pub struct DecapsulationKey {
-	d [32]u8 // decapsulation key seed
-	z [32]u8 // implicit rejection sampling seed
-	p Params
+	d   [32]u8 // decapsulation key seed
+	z   [32]u8 // implicit rejection sampling seed
+	p   Params
 	rho [32]u8 // sampleNTT seed for A, stored for the encapsulation key
 	h   [32]u8 // H(ek), stored for ML-KEM.Decaps_internal
 	// encryption key (parsed)
